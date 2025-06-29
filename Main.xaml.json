@@ -1,0 +1,45 @@
+{
+  "DisplayName": "Main",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "In_Bool_AmbienteProducao",
+      "DisplayName": "In_Bool_AmbienteProducao",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "False",
+      "Widget": null,
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "In_Str_EndpointConversaoBRL",
+      "DisplayName": "In_Str_EndpointConversaoBRL",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "https://economia.awesomeapi.com.br/json/last/",
+      "Widget": null,
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "In_Str_EndpointBuscaCEP",
+      "DisplayName": "In_Str_EndpointBuscaCEP",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}

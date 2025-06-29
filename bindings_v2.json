@@ -1,0 +1,15 @@
+{
+  "version": "2.0",
+  "resources": [
+    {
+      "resource": "asset",
+      "value": {
+        "name": {
+          "defaultValue": "loginBotSqlDexDW",
+          "isExpression": false
+        }
+      },
+      "metadata": {}
+    }
+  ]
+}
