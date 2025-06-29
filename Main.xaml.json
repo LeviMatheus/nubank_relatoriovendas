@@ -72,7 +72,7 @@
       "Tooltip": null,
       "Placeholder": "2018",
       "Widget": null,
-      "IsRequired": false,
+      "IsRequired": true,
       "IsPrincipal": true,
       "ArgumentType": 0,
       "DataSourceItems": null
@@ -84,7 +84,19 @@
       "Tooltip": null,
       "Placeholder": "2021",
       "Widget": null,
-      "IsRequired": false,
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "In_Str_LocalTemplateReport",
+      "DisplayName": "In_Str_LocalTemplateReport",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": true,
       "IsPrincipal": true,
       "ArgumentType": 0,
       "DataSourceItems": null
