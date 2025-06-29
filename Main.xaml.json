@@ -40,6 +40,54 @@
       "IsPrincipal": true,
       "ArgumentType": 0,
       "DataSourceItems": null
+    },
+    {
+      "Name": "In_Str_LocalListaVendedores",
+      "DisplayName": "In_Str_LocalListaVendedores",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "In_Str_LocalListaVendas",
+      "DisplayName": "In_Str_LocalListaVendas",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "In_Int_AnoMinimoInvoice",
+      "DisplayName": "In_Int_AnoMinimoInvoice",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "2018",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "Int_Int_AnoMaximoInvoice",
+      "DisplayName": "Int_Int_AnoMaximoInvoice",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "2021",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
     }
   ]
 }
