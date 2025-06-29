@@ -226,7 +226,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <StateMachine InitialState="{x:Reference __ReferenceID1}" sap2010:Annotation.AnnotationText="[NubankCase_RelatorioVendas]&#xA;[Geração de relatório de vendas]&#xA;[Desenvolvedor: Levi Matheus Guerreiro Sange]" DisplayName="Main" sap:VirtualizedContainerService.HintSize="1231,803.04" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID1}" sap2010:Annotation.AnnotationText="[NubankCase_RelatorioVendas]&#xA;[Geração de relatório de vendas]&#xA;[Desenvolvedor: Levi Matheus Guerreiro Sange]" DisplayName="Main" sap:VirtualizedContainerService.HintSize="1557,803.04" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -369,7 +369,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID4" DisplayName="Extração e Validação de dados" sap:VirtualizedContainerService.HintSize="718,2845" sap2010:WorkflowViewState.IdRef="State_6">
+            <State x:Name="__ReferenceID4" DisplayName="Extração e Validação de dados" sap:VirtualizedContainerService.HintSize="154,60" sap2010:WorkflowViewState.IdRef="State_6">
               <State.Entry>
                 <Sequence DisplayName="Extrair e validar dados" sap:VirtualizedContainerService.HintSize="672,2457" sap2010:WorkflowViewState.IdRef="Sequence_28">
                   <Sequence.Variables>
@@ -2203,36 +2203,58 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID3" DisplayName="Processa Item" sap:VirtualizedContainerService.HintSize="150,60" sap2010:WorkflowViewState.IdRef="State_4">
+                            <State x:Name="__ReferenceID3" DisplayName="Processa Item" sap:VirtualizedContainerService.HintSize="568,1502" sap2010:WorkflowViewState.IdRef="State_4">
                               <State.Entry>
-                                <TryCatch DisplayName="Try Catch Processa Item" sap:VirtualizedContainerService.HintSize="506,756" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                <TryCatch DisplayName="Try Catch Processa Item" sap:VirtualizedContainerService.HintSize="522,1087" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                   <TryCatch.Try>
-                                    <Sequence DisplayName="Processar Item" sap:VirtualizedContainerService.HintSize="468,506" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                    <Sequence DisplayName="Processar Item" sap:VirtualizedContainerService.HintSize="484,837" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Assign DisplayName="Anular FalhaSistema Vindo De Tentativas" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_19">
-                                        <Assign.To>
-                                          <OutArgument x:TypeArguments="s:Exception">
-                                            <CSharpReference x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpReference`1_45">FalhaSistema</CSharpReference>
-                                          </OutArgument>
-                                        </Assign.To>
-                                        <Assign.Value>
-                                          <InArgument x:TypeArguments="ui:BusinessRuleException">
-                                            <CSharpValue x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="CSharpValue`1_151">null</CSharpValue>
+                                      <If DisplayName="Condicional de status" sap:VirtualizedContainerService.HintSize="450,618" sap2010:WorkflowViewState.IdRef="If_12">
+                                        <If.Condition>
+                                          <InArgument x:TypeArguments="x:Boolean">
+                                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_449">string.IsNullOrEmpty(ItemDeTransacao["Erros Encontrados"].ToString())</CSharpValue>
                                           </InArgument>
-                                        </Assign.Value>
-                                      </Assign>
-                                      <ui:LogMessage DisplayName="Log Message Processando" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info">
-                                        <ui:LogMessage.Message>
-                                          <InArgument x:TypeArguments="x:Object">
-                                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_441">"&gt; Processando Item ID: " + ItemDeTransacao["INVOICE"].ToString()</CSharpValue>
-                                          </InArgument>
-                                        </ui:LogMessage.Message>
-                                      </ui:LogMessage>
-                                      <InvokeMethod DisplayName="Remover item com sucesso" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Remove">
+                                        </If.Condition>
+                                        <If.Then>
+                                          <Sequence DisplayName="Processar" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message Processando" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_57" Level="Info">
+                                              <ui:LogMessage.Message>
+                                                <InArgument x:TypeArguments="x:Object">
+                                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_450">"&gt; Processando Item ID: " + ItemDeTransacao["INVOICE"].ToString()</CSharpValue>
+                                                </InArgument>
+                                              </ui:LogMessage.Message>
+                                            </ui:LogMessage>
+                                          </Sequence>
+                                        </If.Then>
+                                        <If.Else>
+                                          <Sequence DisplayName="Pular" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_56" Level="Warn">
+                                              <ui:LogMessage.Message>
+                                                <InArgument x:TypeArguments="x:Object">
+                                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_446">"VENDOR ID: " + ItemDeTransacao["VENDOR ID"].ToString() + " com status " + ItemDeTransacao["Erros Encontrados"].ToString()</CSharpValue>
+                                                </InArgument>
+                                              </ui:LogMessage.Message>
+                                            </ui:LogMessage>
+                                          </Sequence>
+                                        </If.Else>
+                                      </If>
+                                      <InvokeMethod DisplayName="Remover item com sucesso" sap:VirtualizedContainerService.HintSize="450,159" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Remove">
                                         <InvokeMethod.TargetObject>
                                           <InArgument x:TypeArguments="scg:List(x:String)">
                                             <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_439">ListStr_IdsUnicosVendedores</CSharpValue>
@@ -2245,7 +2267,7 @@
                                     </Sequence>
                                   </TryCatch.Try>
                                   <TryCatch.Catches>
-                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="472,22" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="488,22" sap2010:WorkflowViewState.IdRef="Catch`1_10">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2270,7 +2292,7 @@
                                         </Assign>
                                       </ActivityAction>
                                     </Catch>
-                                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="472,22" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+                                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="488,22" sap2010:WorkflowViewState.IdRef="Catch`1_11">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
