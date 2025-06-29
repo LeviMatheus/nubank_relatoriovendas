@@ -108,6 +108,7 @@
       <x:String>System.Dynamic</x:String>
       <x:String>System.Collections.Specialized</x:String>
       <x:String>UiPath.Platform</x:String>
+      <x:String>System.Globalization</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -1097,7 +1098,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence DisplayName="Invalido" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                                  <Sequence DisplayName="Invalido" sap:VirtualizedContainerService.HintSize="468,395" sap2010:WorkflowViewState.IdRef="Sequence_46">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1153,16 +1154,16 @@
                                     </Assign.To>
                                     <Assign.Value>
                                       <InArgument x:TypeArguments="s:DateTime">
-                                        <CSharpValue x:TypeArguments="s:DateTime" sap2010:WorkflowViewState.IdRef="CSharpValue`1_346">Convert.ToDateTime(invoiceAtual["DATE"].ToString())</CSharpValue>
+                                        <CSharpValue x:TypeArguments="s:DateTime" sap2010:WorkflowViewState.IdRef="CSharpValue`1_350">DateTime.ParseExact(invoiceAtual["DATE"].ToString(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture)</CSharpValue>
                                       </InArgument>
                                     </Assign.Value>
                                   </Assign>
                                 </TryCatch.Try>
                                 <TryCatch.Catches>
-                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="Catch`1_19">
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,105" sap2010:WorkflowViewState.IdRef="Catch`1_19">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
@@ -1225,7 +1226,7 @@
                                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_43" Level="Warn">
                                       <ui:LogMessage.Message>
                                         <InArgument x:TypeArguments="x:Object">
-                                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_343">"INVOICE: " + invoiceAtual["INVOICE"].ToString() + " data inválido ou fora do período."</CSharpValue>
+                                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_351">"INVOICE: " + invoiceAtual["INVOICE"].ToString() + " data fora do período de " + In_Int_AnoMinimoInvoice + " a " + Int_Int_AnoMaximoInvoice</CSharpValue>
                                         </InArgument>
                                       </ui:LogMessage.Message>
                                     </ui:LogMessage>
@@ -1237,7 +1238,7 @@
                                       </Assign.To>
                                       <Assign.Value>
                                         <InArgument x:TypeArguments="x:Object">
-                                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_344">"Data da INVOICE inválida"</CSharpValue>
+                                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_352">"Data da INVOICE: " + invoiceAtual["INVOICE"].ToString() + " fora do período de " + In_Int_AnoMinimoInvoice + " a " + Int_Int_AnoMaximoInvoice</CSharpValue>
                                         </InArgument>
                                       </Assign.Value>
                                     </Assign>
@@ -1323,7 +1324,7 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">126,310</av:Point>
-                  <av:Size x:Key="ShapeSize">163,60</av:Size>
+                  <av:Size x:Key="ShapeSize">164,60</av:Size>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
