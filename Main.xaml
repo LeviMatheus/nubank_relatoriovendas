@@ -226,7 +226,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <StateMachine InitialState="{x:Reference __ReferenceID1}" sap2010:Annotation.AnnotationText="[NubankCase_RelatorioVendas]&#xA;[Geração de relatório de vendas]&#xA;[Desenvolvedor: Levi Matheus Guerreiro Sange]" DisplayName="Main" sap:VirtualizedContainerService.HintSize="1557,803.04" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID1}" sap2010:Annotation.AnnotationText="[NubankCase_RelatorioVendas]&#xA;[Geração de relatório de vendas]&#xA;[Desenvolvedor: Levi Matheus Guerreiro Sange]" DisplayName="Main" sap:VirtualizedContainerService.HintSize="1231,803.04" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -560,7 +560,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <TryCatch.Try>
-                      <Sequence DisplayName="Extrair DT_Vendas" sap:VirtualizedContainerService.HintSize="416,452" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                      <Sequence DisplayName="Extrair DT_Vendas" sap:VirtualizedContainerService.HintSize="416,560" sap2010:WorkflowViewState.IdRef="Sequence_29">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -580,7 +580,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:LogMessage>
-                        <uisape:ExtractPDFText FilePassword="{x:Null}" ApplyOcr="True" DisplayName="Extract PDF Text" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="ExtractPDFText_2" OcrEngine="UIPATH_DOCUMENT_OCR">
+                        <uisape:ExtractPDFText FilePassword="{x:Null}" ApplyOcr="True" DisplayName="Extract PDF Text" sap:VirtualizedContainerService.HintSize="382,84" sap2010:WorkflowViewState.IdRef="ExtractPDFText_2" OcrEngine="UIPATH_DOCUMENT_OCR">
                           <uisape:ExtractPDFText.PdfFile>
                             <InArgument x:TypeArguments="upr:IResource">
                               <CSharpValue x:TypeArguments="upr:IResource" sap2010:WorkflowViewState.IdRef="CSharpValue`1_324">LocalResource.FromPath(In_Str_LocalListaVendas)</CSharpValue>
@@ -598,7 +598,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uisape:ExtractPDFText>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Trace">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,84" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Trace">
                           <ui:LogMessage.Message>
                             <InArgument x:TypeArguments="x:Object">
                               <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_240">Str_SalesList</CSharpValue>
@@ -611,7 +611,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:LogMessage>
-                        <Assign DisplayName="Coletar tabela de vendas gerada" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="Assign_32">
+                        <Assign DisplayName="Coletar tabela de vendas gerada" sap:VirtualizedContainerService.HintSize="382,84" sap2010:WorkflowViewState.IdRef="Assign_32">
                           <Assign.To>
                             <OutArgument x:TypeArguments="sd:DataTable">
                               <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_70">DT_Vendas</CSharpReference>
@@ -629,7 +629,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </Assign>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Info">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,75" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Info">
                           <ui:LogMessage.Message>
                             <InArgument x:TypeArguments="x:Object">
                               <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_242">"Tabela de vendas gerada"</CSharpValue>
@@ -1894,11 +1894,11 @@
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="scg:List(x:String)">
-                        <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_424" xml:space="preserve">DT_Vendedores.AsEnumerable()
-    .Where(r =&gt; r.Field&lt;string&gt;("Status") == "Checked")
-    .Select(r =&gt; r.Field&lt;string&gt;("Vendor ID").Trim())
-    .Distinct()
-    .ToList();</CSharpValue>
+                        <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_458" xml:space="preserve">DT_Vendas.AsEnumerable()
+    .GroupBy(r =&gt; r.Field&lt;string&gt;("Vendor ID").Trim())
+    .Where(g =&gt; g.All(row =&gt; string.IsNullOrWhiteSpace(row.Field&lt;string&gt;("Erros Encontrados"))))
+    .Select(g =&gt; g.Key)
+    .ToList()</CSharpValue>
                       </InArgument>
                     </Assign.Value>
                   </Assign>
@@ -2017,27 +2017,22 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_16">
-                                                  <ui:LogMessage.Level>
-                                                    <InArgument x:TypeArguments="ui:LogLevel">
-                                                      <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_112">UiPath.Core.Activities.LogLevel.Warn</CSharpValue>
-                                                    </InArgument>
-                                                  </ui:LogMessage.Level>
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info">
                                                   <ui:LogMessage.Message>
                                                     <InArgument x:TypeArguments="x:Object">
-                                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_428">"Sem itens para processar"</CSharpValue>
+                                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_461">"# Sem itens para processar"</CSharpValue>
                                                     </InArgument>
                                                   </ui:LogMessage.Message>
                                                 </ui:LogMessage>
                                                 <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_16">
                                                   <Assign.To>
-                                                    <OutArgument x:TypeArguments="sd:DataRow">
-                                                      <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_91">ItemDeTransacao</CSharpReference>
+                                                    <OutArgument x:TypeArguments="sd:DataTable">
+                                                      <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_136">DT_ItemDeTransacao</CSharpReference>
                                                     </OutArgument>
                                                   </Assign.To>
                                                   <Assign.Value>
-                                                    <InArgument x:TypeArguments="sd:DataRow">
-                                                      <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_115">null</CSharpValue>
+                                                    <InArgument x:TypeArguments="sd:DataTable">
+                                                      <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_451">null</CSharpValue>
                                                     </InArgument>
                                                   </Assign.Value>
                                                 </Assign>
@@ -2073,13 +2068,13 @@
                                                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                                       <ui:AssignOperation sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="AssignOperation_3">
                                                         <ui:AssignOperation.To>
-                                                          <OutArgument x:TypeArguments="sd:DataRow">
-                                                            <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_92">ItemDeTransacao</CSharpReference>
+                                                          <OutArgument x:TypeArguments="sd:DataTable">
+                                                            <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_137">DT_ItemDeTransacao</CSharpReference>
                                                           </OutArgument>
                                                         </ui:AssignOperation.To>
                                                         <ui:AssignOperation.Value>
-                                                          <InArgument x:TypeArguments="sd:DataRow">
-                                                            <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_435">DT_Vendas.AsEnumerable().First(v =&gt; v["VENDOR ID"].ToString().Equals(Str_VendorID))</CSharpValue>
+                                                          <InArgument x:TypeArguments="sd:DataTable">
+                                                            <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_452">DT_Vendas.AsEnumerable().Where(v =&gt; v["VENDOR ID"].ToString().Equals(Str_VendorID)).CopyToDataTable()</CSharpValue>
                                                           </InArgument>
                                                         </ui:AssignOperation.Value>
                                                       </ui:AssignOperation>
@@ -2108,13 +2103,13 @@
                                           </sap:WorkflowViewStateService.ViewState>
                                           <Assign DisplayName="Limpar item de transacao" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_25">
                                             <Assign.To>
-                                              <OutArgument x:TypeArguments="sd:DataRow">
-                                                <CSharpReference x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpReference`1_93">ItemDeTransacao</CSharpReference>
+                                              <OutArgument x:TypeArguments="sd:DataTable">
+                                                <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_138">DT_ItemDeTransacao</CSharpReference>
                                               </OutArgument>
                                             </Assign.To>
                                             <Assign.Value>
-                                              <InArgument x:TypeArguments="sd:DataRow">
-                                                <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_177">null</CSharpValue>
+                                              <InArgument x:TypeArguments="sd:DataTable">
+                                                <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_453">null</CSharpValue>
                                               </InArgument>
                                             </Assign.Value>
                                           </Assign>
@@ -2203,63 +2198,128 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID3" DisplayName="Processa Item" sap:VirtualizedContainerService.HintSize="568,1502" sap2010:WorkflowViewState.IdRef="State_4">
+                            <State x:Name="__ReferenceID3" DisplayName="Processa Item" sap:VirtualizedContainerService.HintSize="500,1003" sap2010:WorkflowViewState.IdRef="State_4">
                               <State.Entry>
-                                <TryCatch DisplayName="Try Catch Processa Item" sap:VirtualizedContainerService.HintSize="522,1087" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                <TryCatch DisplayName="Try Catch Processa Item" sap:VirtualizedContainerService.HintSize="454,588" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                   <TryCatch.Try>
-                                    <Sequence DisplayName="Processar Item" sap:VirtualizedContainerService.HintSize="484,837" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                    <Sequence DisplayName="Processar Item" sap:VirtualizedContainerService.HintSize="416,338" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="x:Int32" Name="Int_IndiceVendaAtual" />
+                                      </Sequence.Variables>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <If DisplayName="Condicional de status" sap:VirtualizedContainerService.HintSize="450,618" sap2010:WorkflowViewState.IdRef="If_12">
-                                        <If.Condition>
-                                          <InArgument x:TypeArguments="x:Boolean">
-                                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_449">string.IsNullOrEmpty(ItemDeTransacao["Erros Encontrados"].ToString())</CSharpValue>
+                                      <ui:LogMessage DisplayName="Log Message Processando" sap:VirtualizedContainerService.HintSize="382,173" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Info">
+                                        <ui:LogMessage.Message>
+                                          <InArgument x:TypeArguments="x:Object">
+                                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_464">"Processando INVOICE Item ID: " + DT_ItemDeTransacao.Rows[0]["VENDOR ID"].ToString()</CSharpValue>
                                           </InArgument>
-                                        </If.Condition>
-                                        <If.Then>
-                                          <Sequence DisplayName="Processar" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                                        </ui:LogMessage.Message>
+                                      </ui:LogMessage>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Atividades Ignoradas" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_72">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:LogMessage DisplayName="Log Message Processando" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_57" Level="Info">
-                                              <ui:LogMessage.Message>
-                                                <InArgument x:TypeArguments="x:Object">
-                                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_450">"&gt; Processando Item ID: " + ItemDeTransacao["INVOICE"].ToString()</CSharpValue>
+                                            <ui:ForEachRow ColumnNames="{x:Null}" DisplayName="Iterar vendas do vendedor atual" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                              <ui:ForEachRow.Body>
+                                                <ActivityAction x:TypeArguments="sd:DataRow">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="vendaAtual" />
+                                                  </ActivityAction.Argument>
+                                                  <Sequence DisplayName="Verificar INVOICES status" sap:VirtualizedContainerService.HintSize="484,669" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <If DisplayName="Condicional de status" sap:VirtualizedContainerService.HintSize="450,609" sap2010:WorkflowViewState.IdRef="If_12">
+                                                      <If.Condition>
+                                                        <InArgument x:TypeArguments="x:Boolean">
+                                                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_456">!string.IsNullOrEmpty(vendaAtual["Erros Encontrados"].ToString())</CSharpValue>
+                                                        </InArgument>
+                                                      </If.Condition>
+                                                      <If.Then>
+                                                        <Sequence DisplayName="Pular" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:LogMessage DisplayName="Log Message Processando" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_57" Level="Info">
+                                                            <ui:LogMessage.Message>
+                                                              <InArgument x:TypeArguments="x:Object">
+                                                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_457">"Encontrado INVOICE&gt; Processando Item ID: " + DT_ItemDeTransacao["INVOICE"].ToString()</CSharpValue>
+                                                              </InArgument>
+                                                            </ui:LogMessage.Message>
+                                                          </ui:LogMessage>
+                                                        </Sequence>
+                                                      </If.Then>
+                                                      <If.Else>
+                                                        <Sequence DisplayName="Pular" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_56" Level="Warn">
+                                                            <ui:LogMessage.Message>
+                                                              <InArgument x:TypeArguments="x:Object">
+                                                                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_446">"VENDOR ID: " + DT_ItemDeTransacao["VENDOR ID"].ToString() + " com status " + DT_ItemDeTransacao["Erros Encontrados"].ToString()</CSharpValue>
+                                                              </InArgument>
+                                                            </ui:LogMessage.Message>
+                                                          </ui:LogMessage>
+                                                        </Sequence>
+                                                      </If.Else>
+                                                    </If>
+                                                  </Sequence>
+                                                </ActivityAction>
+                                              </ui:ForEachRow.Body>
+                                              <ui:ForEachRow.CurrentIndex>
+                                                <OutArgument x:TypeArguments="x:Int32">
+                                                  <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_139">Int_IndiceVendaAtual</CSharpReference>
+                                                </OutArgument>
+                                              </ui:ForEachRow.CurrentIndex>
+                                              <ui:ForEachRow.DataTable>
+                                                <InArgument x:TypeArguments="sd:DataTable">
+                                                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_454">DT_ItemDeTransacao</CSharpValue>
                                                 </InArgument>
-                                              </ui:LogMessage.Message>
-                                            </ui:LogMessage>
+                                              </ui:ForEachRow.DataTable>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:ForEachRow>
                                           </Sequence>
-                                        </If.Then>
-                                        <If.Else>
-                                          <Sequence DisplayName="Pular" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="Sequence_70">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_56" Level="Warn">
-                                              <ui:LogMessage.Message>
-                                                <InArgument x:TypeArguments="x:Object">
-                                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_446">"VENDOR ID: " + ItemDeTransacao["VENDOR ID"].ToString() + " com status " + ItemDeTransacao["Erros Encontrados"].ToString()</CSharpValue>
-                                                </InArgument>
-                                              </ui:LogMessage.Message>
-                                            </ui:LogMessage>
-                                          </Sequence>
-                                        </If.Else>
-                                      </If>
-                                      <InvokeMethod DisplayName="Remover item com sucesso" sap:VirtualizedContainerService.HintSize="450,159" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Remove">
+                                        </ui:CommentOut.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:CommentOut>
+                                      <InvokeMethod DisplayName="Remover item com sucesso" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Remove">
                                         <InvokeMethod.TargetObject>
                                           <InArgument x:TypeArguments="scg:List(x:String)">
                                             <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_439">ListStr_IdsUnicosVendedores</CSharpValue>
                                           </InArgument>
                                         </InvokeMethod.TargetObject>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
                                         <InArgument x:TypeArguments="x:String">
                                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_438">Str_VendorID</CSharpValue>
                                         </InArgument>
@@ -2267,7 +2327,7 @@
                                     </Sequence>
                                   </TryCatch.Try>
                                   <TryCatch.Catches>
-                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="488,22" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="420,22" sap2010:WorkflowViewState.IdRef="Catch`1_10">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2292,7 +2352,7 @@
                                         </Assign>
                                       </ActivityAction>
                                     </Catch>
-                                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="488,22" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+                                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="420,22" sap2010:WorkflowViewState.IdRef="Catch`1_11">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2336,7 +2396,7 @@
                                                 <CSharpValue x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="CSharpValue`1_197">FalhaRegraDeNegocio</CSharpValue>
                                               </InArgument>
                                               <InArgument x:TypeArguments="sd:DataRow" x:Key="In_ItemTransacao">
-                                                <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_199">ItemDeTransacao</CSharpValue>
+                                                <CSharpValue x:TypeArguments="sd:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_199">DT_ItemDeTransacao</CSharpValue>
                                               </InArgument>
                                               <InArgument x:TypeArguments="x:String" x:Key="In_userSQL">
                                                 <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_201">userSQL</CSharpValue>
@@ -2448,7 +2508,7 @@
                             </ui:LogMessage>
                           </Transition.Action>
                           <Transition.Condition>
-                            <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_295">FalhaRegraDeNegocio==null &amp;&amp; FalhaSistema==null &amp;&amp; !Bool_PararRPA</CSharpValue>
+                            <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_462">FalhaRegraDeNegocio==null &amp;&amp; FalhaSistema==null &amp;&amp; !Bool_PararRPA &amp;&amp; DT_ItemDeTransacao != null</CSharpValue>
                           </Transition.Condition>
                         </Transition>
                         <Transition DisplayName="Falha Coleta Itens" sap:VirtualizedContainerService.HintSize="554,892" sap2010:WorkflowViewState.IdRef="Transition_6">
@@ -2534,7 +2594,7 @@
                             <x:Reference>__ReferenceID2</x:Reference>
                           </Transition.To>
                           <Transition.Condition>
-                            <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_293">FalhaRegraDeNegocio==null &amp;&amp; FalhaSistema==null || Bool_PararRPA</CSharpValue>
+                            <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_463">FalhaRegraDeNegocio==null &amp;&amp; FalhaSistema==null &amp;&amp; DT_ItemDeTransacao == null || Bool_PararRPA</CSharpValue>
                           </Transition.Condition>
                         </Transition>
                       </State.Transitions>
@@ -2651,7 +2711,7 @@
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="sd:DataTable" Name="DT_Vendedores" />
-      <Variable x:TypeArguments="sd:DataRow" Name="ItemDeTransacao" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DT_ItemDeTransacao" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="ListStr_IdsUnicosVendedores">
         <Variable.Default>
           <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_425">null</CSharpValue>

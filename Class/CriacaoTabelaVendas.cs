@@ -23,7 +23,7 @@ public static class CriacaoTabelaVendas
         table.Columns.Add("TOTAL CURRENCY");
         
         // Regex
-        string padrao = @"(?<invoice>\S+)\s+(?<date>\d{2}[\/\-][a-zA-Z]{3}[\-\/]\d{2,4}|\d{2}[\/\-]\d{2}[\/\-]\d{4}|0000-00-00)\s+(?<postal>\S+)\s+(?<vendor>[A-Z0-9 ]{4,12})\s+(?<item>(?:[A-Za-z]+\s*)+?)\s+(?<qty>\d+)\s+(?<unitCost>[0-9.,]+)\s+(?<unitCurr>[A-Z]+)\s+(?<totalPrice>[0-9.,]+)\s+(?<totalCurr>[A-Z]+)";
+        string padrao = @"(?<invoice>\S+)\s+(?<date>\d{2}[\/\-][a-zA-Z]{3}[\-\/]\d{2,4}|\d{2}[\/\-]\d{2}[\/\-]\d{4}|0000-00-00)\s+(?<postal>\S+)\s+(?<vendor>[A-Z0-9 ]{8,9})\s+(?<item>(?:[A-Za-z]+\s*)+?)\s+(?<qty>\d+)\s+(?<unitCost>[0-9.,]+)\s+(?<unitCurr>[A-Z]+)\s+(?<totalPrice>[0-9.,]+)\s+(?<totalCurr>[A-Z]+)";
         
         foreach (Match match in Regex.Matches(Str_Vendas, padrao))
         {
