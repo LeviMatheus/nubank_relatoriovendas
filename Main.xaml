@@ -2223,11 +2223,11 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID3" DisplayName="Processa Item" sap:VirtualizedContainerService.HintSize="636,2959" sap2010:WorkflowViewState.IdRef="State_4">
+                            <State x:Name="__ReferenceID3" DisplayName="Processa Item" sap:VirtualizedContainerService.HintSize="636,3132" sap2010:WorkflowViewState.IdRef="State_4">
                               <State.Entry>
-                                <TryCatch DisplayName="Try Catch Processa Item" sap:VirtualizedContainerService.HintSize="590,2544" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                <TryCatch DisplayName="Try Catch Processa Item" sap:VirtualizedContainerService.HintSize="590,2717" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                   <TryCatch.Try>
-                                    <Sequence DisplayName="Processar Item" sap:VirtualizedContainerService.HintSize="552,2294" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                    <Sequence DisplayName="Processar Item" sap:VirtualizedContainerService.HintSize="552,2467" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:Int32" Name="Int_IndiceVendaAtual" />
                                         <Variable x:TypeArguments="x:String" Name="Str_NovoRelatorioVendedor" />
@@ -2275,13 +2275,13 @@
                                           </InArgument>
                                         </ui:CopyFile.Path>
                                       </ui:CopyFile>
-                                      <ui:ExcelApplicationScope Password="{x:Null}" SensitivityLabel="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="518,1601" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" SensitivityOperation="None">
+                                      <ui:ExcelApplicationScope Password="{x:Null}" SensitivityLabel="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="518,1742" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" SensitivityOperation="None">
                                         <ui:ExcelApplicationScope.Body>
                                           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                             <ActivityAction.Argument>
                                               <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                                             </ActivityAction.Argument>
-                                            <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="484,1459" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                                            <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="484,1632" sap2010:WorkflowViewState.IdRef="Sequence_73">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="sheetName" />
                                                 <Variable x:TypeArguments="x:String" Name="Str_IntervaloVendorID" />
@@ -2657,13 +2657,13 @@
                                                     </InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <ui:ForEachRow ColumnNames="{x:Null}" DisplayName="Iterar invoices" sap:VirtualizedContainerService.HintSize="502,885" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                                                <ui:ForEachRow ColumnNames="{x:Null}" DisplayName="Iterar invoices" sap:VirtualizedContainerService.HintSize="502,712" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                                                   <ui:ForEachRow.Body>
                                                     <ActivityAction x:TypeArguments="sd:DataRow">
                                                       <ActivityAction.Argument>
                                                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="invoiceAtual" />
                                                       </ActivityAction.Argument>
-                                                      <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="468,698" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                                                      <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="468,525" sap2010:WorkflowViewState.IdRef="Sequence_76">
                                                         <Sequence.Variables>
                                                           <Variable x:TypeArguments="x:String" Name="Str_RangeInvoiceNumber" />
                                                         </Sequence.Variables>
@@ -2684,13 +2684,6 @@
                                                             </InArgument>
                                                           </Assign.Value>
                                                         </Assign>
-                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_62" Level="Info">
-                                                          <ui:LogMessage.Message>
-                                                            <InArgument x:TypeArguments="x:Object">
-                                                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_545">"Numero: " + Str_RangeInvoiceNumber</CSharpValue>
-                                                            </InArgument>
-                                                          </ui:LogMessage.Message>
-                                                        </ui:LogMessage>
                                                         <ui:ExcelWriteCell DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,120" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7">
                                                           <ui:ExcelWriteCell.Cell>
                                                             <InArgument x:TypeArguments="x:String">
@@ -2757,7 +2750,7 @@
                                                   </ui:ForEachRow.DataTable>
                                                 </ui:ForEachRow>
                                               </Sequence>
-                                              <Sequence DisplayName="Aplicar desconto e taxa" sap:VirtualizedContainerService.HintSize="450,1112" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                                              <Sequence DisplayName="Aplicar desconto e taxa" sap:VirtualizedContainerService.HintSize="450,1285" sap2010:WorkflowViewState.IdRef="Sequence_78">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="x:String" Name="Str_IntervaloDesconto" />
                                                   <Variable x:TypeArguments="x:String" Name="Str_IntervaloSubtotal" />
@@ -2794,7 +2787,7 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </ui:ExcelLookUpRange>
-                                                <ui:ExcelReadCell DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1">
+                                                <ui:ExcelReadCell DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" PreserveFormat="True">
                                                   <ui:ExcelReadCell.Cell>
                                                     <InArgument x:TypeArguments="x:String">
                                                       <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_578">Str_IntervaloSubtotal.Replace("E","G")</CSharpValue>
@@ -2811,6 +2804,13 @@
                                                     </InArgument>
                                                   </ui:ExcelReadCell.SheetName>
                                                 </ui:ExcelReadCell>
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_68" Level="Info">
+                                                  <ui:LogMessage.Message>
+                                                    <InArgument x:TypeArguments="x:Object">
+                                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_579">"Subtotal: " + Str_Subtotal</CSharpValue>
+                                                    </InArgument>
+                                                  </ui:LogMessage.Message>
+                                                </ui:LogMessage>
                                                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_65" Level="Info">
                                                   <ui:LogMessage.Message>
                                                     <InArgument x:TypeArguments="x:Object">
