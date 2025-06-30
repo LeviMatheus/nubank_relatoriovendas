@@ -52,8 +52,8 @@ Automatizar todo o processo de:
 ## 📬 Entrega Final
 
 Cada vendedor recebe:
-- Um relatório **personalizado**, **protegido por senha**, em **PDF**.
-- Um e-mail automático com o anexo.
+- Os relatórios **protegidos por senha**, em **PDF** são **protegidos por senha**
+- Um e-mail automático com os relatórios (em formato de planilha e PDF) sobre suas vendas anexo.
 
 ---
 
@@ -68,8 +68,8 @@ Cada vendedor recebe:
 
 ## 💡 Diferenciais
 
-- Código limpo, reutilizável e bem estruturado.
-- Extração de dados inteligente com Regex e tratamento de exceções.
+- Argumentos de entrada para personalização no ambiente Orchestrator, bem estruturado.
+- Extração de dados inteligente com OCR, Regex e tratamento de exceções.
 - Estratégia escalável para uso com Orchestrator e múltiplos robôs.
 
 ---
