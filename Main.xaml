@@ -395,7 +395,7 @@
           <Transition.To>
             <State x:Name="__ReferenceID4" DisplayName="Extração e Validação de dados" sap:VirtualizedContainerService.HintSize="154,60" sap2010:WorkflowViewState.IdRef="State_6">
               <State.Entry>
-                <Sequence DisplayName="Extrair e validar dados" sap:VirtualizedContainerService.HintSize="672,3388" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                <Sequence DisplayName="Extrair e validar dados" sap:VirtualizedContainerService.HintSize="672,3139" sap2010:WorkflowViewState.IdRef="Sequence_28">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="Str_SalesList" />
                   </Sequence.Variables>
@@ -405,7 +405,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch DisplayName="Extração DT_Vendedores" sap:VirtualizedContainerService.HintSize="456,578" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                  <TryCatch DisplayName="Extração DT_Vendedores" sap:VirtualizedContainerService.HintSize="638,57" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -718,7 +718,7 @@
                       </Catch>
                     </TryCatch.Catches>
                   </TryCatch>
-                  <Sequence DisplayName="Adicionar novas colunas" sap:VirtualizedContainerService.HintSize="638,99" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                  <Sequence DisplayName="Adicionar novas colunas" sap:VirtualizedContainerService.HintSize="638,57" sap2010:WorkflowViewState.IdRef="Sequence_35">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -757,7 +757,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </Assign>
                   </Sequence>
-                  <Sequence DisplayName="Validações e conversões" sap:VirtualizedContainerService.HintSize="638,2354" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                  <Sequence DisplayName="Validações e conversões" sap:VirtualizedContainerService.HintSize="638,2147" sap2010:WorkflowViewState.IdRef="Sequence_36">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="Str_RespostaCEP" />
                       <Variable x:TypeArguments="x:Int32" Name="Int_StatusCEP" />
@@ -768,7 +768,7 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="604,84" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Info">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="604,57" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Info">
                       <ui:LogMessage.Message>
                         <InArgument x:TypeArguments="x:Object">
                           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_331">"Iniciando validações e câmbio"</CSharpValue>
@@ -781,13 +781,13 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="Iterar DT_Vendas para operações" sap:VirtualizedContainerService.HintSize="604,2103" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="Iterar DT_Vendas para operações" sap:VirtualizedContainerService.HintSize="604,1923" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="invoiceAtual" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="570,1907" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                          <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="570,1727" sap2010:WorkflowViewState.IdRef="Sequence_37">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:Int32" Name="Int_Valor_CustoUnitario" />
                               <Variable x:TypeArguments="x:Int32" Name="Int_Valor_PrecoTotal" />
@@ -799,7 +799,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Câmbio" sap:VirtualizedContainerService.HintSize="536,99" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                            <Sequence DisplayName="Câmbio" sap:VirtualizedContainerService.HintSize="536,57" sap2010:WorkflowViewState.IdRef="Sequence_43">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1101,7 +1101,7 @@
                                 </If.Else>
                               </If>
                             </Sequence>
-                            <Sequence DisplayName="Validar INVOICE" sap:VirtualizedContainerService.HintSize="536,99" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                            <Sequence DisplayName="Validar INVOICE" sap:VirtualizedContainerService.HintSize="536,57" sap2010:WorkflowViewState.IdRef="Sequence_45">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="s:DateTime" Name="Date_DataInvoice" />
                               </Sequence.Variables>
@@ -1296,14 +1296,14 @@
                                 </If.Else>
                               </If>
                             </Sequence>
-                            <Sequence DisplayName="Validar VENDOR" sap:VirtualizedContainerService.HintSize="536,1559" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                            <Sequence DisplayName="Validar VENDOR" sap:VirtualizedContainerService.HintSize="536,1505" sap2010:WorkflowViewState.IdRef="Sequence_51">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502,84" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="Info">
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="502,57" sap2010:WorkflowViewState.IdRef="LogMessage_45" Level="Info">
                                 <ui:LogMessage.Message>
                                   <InArgument x:TypeArguments="x:Object">
                                     <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_353">"Verificando ID vendedor "</CSharpValue>
@@ -1316,7 +1316,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:LogMessage>
-                              <If DisplayName="Condicional VENDOR ID" sap:VirtualizedContainerService.HintSize="502,84" sap2010:WorkflowViewState.IdRef="If_7">
+                              <If DisplayName="Condicional VENDOR ID" sap:VirtualizedContainerService.HintSize="502,57" sap2010:WorkflowViewState.IdRef="If_7">
                                 <If.Condition>
                                   <InArgument x:TypeArguments="x:Boolean">
                                     <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_359">!Regex.IsMatch(invoiceAtual["VENDOR ID"].ToString(), @"^[A-Z]{2}\d{6}$")</CSharpValue>
@@ -1474,7 +1474,7 @@
                                 </If.Else>
                               </If>
                             </Sequence>
-                            <Sequence DisplayName="Endereços" sap:VirtualizedContainerService.HintSize="536,90" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                            <Sequence DisplayName="Endereços" sap:VirtualizedContainerService.HintSize="484,605" sap2010:WorkflowViewState.IdRef="Sequence_58">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2223,11 +2223,11 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID3" DisplayName="Processa Item" sap:VirtualizedContainerService.HintSize="722,4622" sap2010:WorkflowViewState.IdRef="State_4">
+                            <State x:Name="__ReferenceID3" DisplayName="Processa Item" sap:VirtualizedContainerService.HintSize="636,2959" sap2010:WorkflowViewState.IdRef="State_4">
                               <State.Entry>
-                                <TryCatch DisplayName="Try Catch Processa Item" sap:VirtualizedContainerService.HintSize="676,4207" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                <TryCatch DisplayName="Try Catch Processa Item" sap:VirtualizedContainerService.HintSize="590,2544" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                   <TryCatch.Try>
-                                    <Sequence DisplayName="Processar Item" sap:VirtualizedContainerService.HintSize="638,3957" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                    <Sequence DisplayName="Processar Item" sap:VirtualizedContainerService.HintSize="552,2294" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:Int32" Name="Int_IndiceVendaAtual" />
                                         <Variable x:TypeArguments="x:String" Name="Str_NovoRelatorioVendedor" />
@@ -2237,14 +2237,14 @@
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Message Processando" sap:VirtualizedContainerService.HintSize="604,173" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Info">
+                                      <ui:LogMessage DisplayName="Log Message Processando" sap:VirtualizedContainerService.HintSize="518,173" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Info">
                                         <ui:LogMessage.Message>
                                           <InArgument x:TypeArguments="x:Object">
                                             <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_464">"Processando INVOICE Item ID: " + DT_ItemDeTransacao.Rows[0]["VENDOR ID"].ToString()</CSharpValue>
                                           </InArgument>
                                         </ui:LogMessage.Message>
                                       </ui:LogMessage>
-                                      <Assign sap:VirtualizedContainerService.HintSize="604,114" sap2010:WorkflowViewState.IdRef="Assign_80">
+                                      <Assign sap:VirtualizedContainerService.HintSize="518,114" sap2010:WorkflowViewState.IdRef="Assign_80">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">
                                             <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_140">Str_NovoRelatorioVendedor</CSharpReference>
@@ -2256,14 +2256,14 @@
                                           </InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="604,112" sap2010:WorkflowViewState.IdRef="DeleteFileX_1">
+                                      <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="518,112" sap2010:WorkflowViewState.IdRef="DeleteFileX_1">
                                         <ui:DeleteFileX.Path>
                                           <InArgument x:TypeArguments="x:String">
                                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_471">Str_NovoRelatorioVendedor</CSharpValue>
                                           </InArgument>
                                         </ui:DeleteFileX.Path>
                                       </ui:DeleteFileX>
-                                      <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="604,186" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True">
+                                      <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="518,186" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True">
                                         <ui:CopyFile.Destination>
                                           <InArgument x:TypeArguments="x:String">
                                             <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_472">Str_NovoRelatorioVendedor</CSharpValue>
@@ -2275,13 +2275,13 @@
                                           </InArgument>
                                         </ui:CopyFile.Path>
                                       </ui:CopyFile>
-                                      <ui:ExcelApplicationScope Password="{x:Null}" SensitivityLabel="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="604,3264" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" SensitivityOperation="None">
+                                      <ui:ExcelApplicationScope Password="{x:Null}" SensitivityLabel="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="518,1601" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" SensitivityOperation="None">
                                         <ui:ExcelApplicationScope.Body>
                                           <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                             <ActivityAction.Argument>
                                               <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                                             </ActivityAction.Argument>
-                                            <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="570,3122" sap2010:WorkflowViewState.IdRef="Sequence_73">
+                                            <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="484,1459" sap2010:WorkflowViewState.IdRef="Sequence_73">
                                               <Sequence.Variables>
                                                 <Variable x:TypeArguments="x:String" Name="sheetName" />
                                                 <Variable x:TypeArguments="x:String" Name="Str_IntervaloVendorID" />
@@ -2294,14 +2294,14 @@
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="536,173" sap2010:WorkflowViewState.IdRef="LogMessage_59" Level="Info">
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_59" Level="Info">
                                                 <ui:LogMessage.Message>
                                                   <InArgument x:TypeArguments="x:Object">
                                                     <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_509">"&gt; Preenchendo relatório do vendedor: " + Str_VendorID</CSharpValue>
                                                   </InArgument>
                                                 </ui:LogMessage.Message>
                                               </ui:LogMessage>
-                                              <Sequence DisplayName="Preencher o Header" sap:VirtualizedContainerService.HintSize="536,57" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                                              <Sequence DisplayName="Preencher o Header" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_74">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="x:String" Name="Str_IntervaloTelefone" />
                                                   <Variable x:TypeArguments="x:String" Name="Str_IntervaloEmail" />
@@ -2515,7 +2515,7 @@
                                                   </ui:ExcelWriteCell.Text>
                                                 </ui:ExcelWriteCell>
                                               </Sequence>
-                                              <Sequence DisplayName="Preencher as linhas INVOICE" sap:VirtualizedContainerService.HintSize="536,1893" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                                              <Sequence DisplayName="Preencher as linhas INVOICE" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="Sequence_75">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="x:String" Name="Str_IntervaloHeaderInvoiceNumber" />
                                                   <Variable x:TypeArguments="x:String" Name="Str_IntervaloHeaderCustoUnitario" />
@@ -2528,7 +2528,7 @@
                                                 </Sequence.Variables>
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
@@ -2657,13 +2657,13 @@
                                                     </InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <ui:ForEachRow ColumnNames="{x:Null}" DisplayName="Iterar invoices" sap:VirtualizedContainerService.HintSize="502,1231" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                                                <ui:ForEachRow ColumnNames="{x:Null}" DisplayName="Iterar invoices" sap:VirtualizedContainerService.HintSize="502,885" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                                                   <ui:ForEachRow.Body>
                                                     <ActivityAction x:TypeArguments="sd:DataRow">
                                                       <ActivityAction.Argument>
                                                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="invoiceAtual" />
                                                       </ActivityAction.Argument>
-                                                      <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="468,1044" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                                                      <Sequence DisplayName="Corpo" sap:VirtualizedContainerService.HintSize="468,698" sap2010:WorkflowViewState.IdRef="Sequence_76">
                                                         <Sequence.Variables>
                                                           <Variable x:TypeArguments="x:String" Name="Str_RangeInvoiceNumber" />
                                                         </Sequence.Variables>
@@ -2708,13 +2708,6 @@
                                                             </InArgument>
                                                           </ui:ExcelWriteCell.Text>
                                                         </ui:ExcelWriteCell>
-                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_63" Level="Info">
-                                                          <ui:LogMessage.Message>
-                                                            <InArgument x:TypeArguments="x:Object">
-                                                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_546">"Unitario: " + Str_RangeInvoiceNumber.Replace("B","D")</CSharpValue>
-                                                            </InArgument>
-                                                          </ui:LogMessage.Message>
-                                                        </ui:LogMessage>
                                                         <ui:ExcelWriteCell DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,120" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8">
                                                           <ui:ExcelWriteCell.Cell>
                                                             <InArgument x:TypeArguments="x:String">
@@ -2732,13 +2725,6 @@
                                                             </InArgument>
                                                           </ui:ExcelWriteCell.Text>
                                                         </ui:ExcelWriteCell>
-                                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_64" Level="Info">
-                                                          <ui:LogMessage.Message>
-                                                            <InArgument x:TypeArguments="x:Object">
-                                                              <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_548">"QTY: " + Str_RangeInvoiceNumber.Replace("B","E")</CSharpValue>
-                                                            </InArgument>
-                                                          </ui:LogMessage.Message>
-                                                        </ui:LogMessage>
                                                         <ui:ExcelWriteCell DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,111" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9">
                                                           <ui:ExcelWriteCell.Cell>
                                                             <InArgument x:TypeArguments="x:String">
@@ -2771,7 +2757,7 @@
                                                   </ui:ForEachRow.DataTable>
                                                 </ui:ForEachRow>
                                               </Sequence>
-                                              <Sequence DisplayName="Aplicar desconto e taxa" sap:VirtualizedContainerService.HintSize="450,916" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                                              <Sequence DisplayName="Aplicar desconto e taxa" sap:VirtualizedContainerService.HintSize="450,1112" sap2010:WorkflowViewState.IdRef="Sequence_78">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="x:String" Name="Str_IntervaloDesconto" />
                                                   <Variable x:TypeArguments="x:String" Name="Str_IntervaloSubtotal" />
@@ -2783,6 +2769,13 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_67" Level="Info">
+                                                  <ui:LogMessage.Message>
+                                                    <InArgument x:TypeArguments="x:Object">
+                                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_577">"Aplicando descontos e taxas"</CSharpValue>
+                                                    </InArgument>
+                                                  </ui:LogMessage.Message>
+                                                </ui:LogMessage>
                                                 <ui:ExcelLookUpRange Range="{x:Null}" DisplayName="LookUp Range" sap:VirtualizedContainerService.HintSize="416,120" sap2010:WorkflowViewState.IdRef="ExcelLookUpRange_12" Value="SUBTOTAL">
                                                   <ui:ExcelLookUpRange.Result>
                                                     <OutArgument x:TypeArguments="x:String">
@@ -2804,7 +2797,7 @@
                                                 <ui:ExcelReadCell DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1">
                                                   <ui:ExcelReadCell.Cell>
                                                     <InArgument x:TypeArguments="x:String">
-                                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_563">Str_IntervaloSubtotal.Replace("G","E")</CSharpValue>
+                                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_578">Str_IntervaloSubtotal.Replace("E","G")</CSharpValue>
                                                     </InArgument>
                                                   </ui:ExcelReadCell.Cell>
                                                   <ui:ExcelReadCell.Result>
@@ -2821,7 +2814,10 @@
                                                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="LogMessage_65" Level="Info">
                                                   <ui:LogMessage.Message>
                                                     <InArgument x:TypeArguments="x:Object">
-                                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_565">"Valor desconto" + (double.Parse(Str_Subtotal)*0.10).ToString("F2")</CSharpValue>
+                                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_574" xml:space="preserve">"Valor desconto" + (double.Parse(
+    Str_Subtotal.Replace("R$", "").Replace(",", "").Trim(),
+    CultureInfo.InvariantCulture
+)*0.10).ToString("F2")</CSharpValue>
                                                     </InArgument>
                                                   </ui:LogMessage.Message>
                                                 </ui:LogMessage>
@@ -2856,7 +2852,10 @@
                                                   </ui:ExcelWriteCell.SheetName>
                                                   <ui:ExcelWriteCell.Text>
                                                     <InArgument x:TypeArguments="x:String">
-                                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_568">(double.Parse(Str_Subtotal)*0.10).ToString("F2")</CSharpValue>
+                                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_576" xml:space="preserve">(double.Parse(
+    Str_Subtotal.Replace("R$", "").Replace(",", "").Trim(),
+    CultureInfo.InvariantCulture
+)*0.10).ToString("F2")</CSharpValue>
                                                     </InArgument>
                                                   </ui:ExcelWriteCell.Text>
                                                 </ui:ExcelWriteCell>
@@ -2878,7 +2877,7 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                 </ui:ExcelLookUpRange>
-                                                <ui:ExcelWriteCell DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="416,111" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12">
+                                                <ui:ExcelWriteCell DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="416,111" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_12" Text="5">
                                                   <ui:ExcelWriteCell.Cell>
                                                     <InArgument x:TypeArguments="x:String">
                                                       <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_573">Str_IntervaloTaxRate.Replace("E","G")</CSharpValue>
@@ -2889,11 +2888,6 @@
                                                       <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_572">sheetName</CSharpValue>
                                                     </InArgument>
                                                   </ui:ExcelWriteCell.SheetName>
-                                                  <ui:ExcelWriteCell.Text>
-                                                    <InArgument x:TypeArguments="x:String">
-                                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_571">(double.Parse(Str_Subtotal)*0.10).ToString("F2")</CSharpValue>
-                                                    </InArgument>
-                                                  </ui:ExcelWriteCell.Text>
                                                 </ui:ExcelWriteCell>
                                               </Sequence>
                                             </Sequence>
@@ -2905,7 +2899,7 @@
                                           </InArgument>
                                         </ui:ExcelApplicationScope.WorkbookPath>
                                       </ui:ExcelApplicationScope>
-                                      <InvokeMethod DisplayName="Remover item com sucesso" sap:VirtualizedContainerService.HintSize="604,48" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Remove">
+                                      <InvokeMethod DisplayName="Remover item com sucesso" sap:VirtualizedContainerService.HintSize="518,48" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="Remove">
                                         <InvokeMethod.TargetObject>
                                           <InArgument x:TypeArguments="scg:List(x:String)">
                                             <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_439">ListStr_IdsUnicosVendedores</CSharpValue>
@@ -2924,7 +2918,7 @@
                                     </Sequence>
                                   </TryCatch.Try>
                                   <TryCatch.Catches>
-                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="642,22" sap2010:WorkflowViewState.IdRef="Catch`1_10">
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="556,22" sap2010:WorkflowViewState.IdRef="Catch`1_10">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2949,7 +2943,7 @@
                                         </Assign>
                                       </ActivityAction>
                                     </Catch>
-                                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="642,22" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+                                    <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="556,22" sap2010:WorkflowViewState.IdRef="Catch`1_11">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
