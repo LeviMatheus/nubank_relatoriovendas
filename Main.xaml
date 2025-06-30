@@ -2206,11 +2206,11 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID3" DisplayName="Processa Item" sap:VirtualizedContainerService.HintSize="586,2135" sap2010:WorkflowViewState.IdRef="State_4">
+                            <State x:Name="__ReferenceID3" DisplayName="Processa Item" sap:VirtualizedContainerService.HintSize="586,2075" sap2010:WorkflowViewState.IdRef="State_4">
                               <State.Entry>
-                                <TryCatch DisplayName="Try Catch Processa Item" sap:VirtualizedContainerService.HintSize="540,1680" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                <TryCatch DisplayName="Try Catch Processa Item" sap:VirtualizedContainerService.HintSize="540,1660" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                   <TryCatch.Try>
-                                    <Sequence DisplayName="Processar Item" sap:VirtualizedContainerService.HintSize="502,1390" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                    <Sequence DisplayName="Processar Item" sap:VirtualizedContainerService.HintSize="502,1410" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:Int32" Name="Int_IndiceVendaAtual" />
                                         <Variable x:TypeArguments="x:String" Name="Str_NovoRelatorioVendedor" />
@@ -3197,7 +3197,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </upap:ManagePDFPassword>
-                                      <Sequence DisplayName="Enviar email" sap:VirtualizedContainerService.HintSize="468,826" sap2010:WorkflowViewState.IdRef="Sequence_98">
+                                      <Sequence DisplayName="Enviar email" sap:VirtualizedContainerService.HintSize="468,846" sap2010:WorkflowViewState.IdRef="Sequence_98">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="sd:DataTable" Name="DT_Erros" />
                                           <Variable x:TypeArguments="x:String" Name="Str_Body" />
@@ -3209,14 +3209,20 @@
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_77" Level="Info">
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="LogMessage_77" Level="Info">
                                           <ui:LogMessage.Message>
                                             <InArgument x:TypeArguments="x:Object">
                                               <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_690">"Rotina de envio de email"</CSharpValue>
                                             </InArgument>
                                           </ui:LogMessage.Message>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
                                         </ui:LogMessage>
-                                        <ui:FilterDataTable DisplayName="Filtrar erros" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" SelectColumnsMode="Keep">
+                                        <ui:FilterDataTable DisplayName="Filtrar erros" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="434,193" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" SelectColumnsMode="Keep">
                                           <ui:FilterDataTable.DataTable>
                                             <InArgument x:TypeArguments="sd:DataTable">
                                               <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_674">DT_ItemDeTransacao</CSharpValue>
@@ -3224,7 +3230,13 @@
                                           </ui:FilterDataTable.DataTable>
                                           <ui:FilterDataTable.Filters>
                                             <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                                              <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
+                                              <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
+                                                <ui:FilterOperationArgument.Column>
+                                                  <InArgument x:TypeArguments="x:String">
+                                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_702">"Erros Encontrados"</CSharpValue>
+                                                  </InArgument>
+                                                </ui:FilterOperationArgument.Column>
+                                              </ui:FilterOperationArgument>
                                             </scg:List>
                                           </ui:FilterDataTable.Filters>
                                           <ui:FilterDataTable.OutputDataTable>
@@ -3247,7 +3259,7 @@
                                           </ui:FilterDataTable.SelectColumns>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
@@ -3317,7 +3329,7 @@
                                           </Assign.To>
                                           <Assign.Value>
                                             <InArgument x:TypeArguments="x:String">
-                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_700">Str_Body.Replace("[Mês/Ano]",DateTime.Now.ToString("MMMM")+"/"+DateTime.Now.Year).Replace("[NOME DO VENDEDOR]",Row_Vendedor["Vendor Name"].ToString())</CSharpValue>
+                                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_701">Str_Body.Replace("[Mês/Ano]",DateTime.Now.ToString("MMMM", new CultureInfo("pt-BR"))+"/"+DateTime.Now.Year).Replace("[NOME DO VENDEDOR]",Row_Vendedor["Vendor Name"].ToString())</CSharpValue>
                                             </InArgument>
                                           </Assign.Value>
                                           <sap:WorkflowViewStateService.ViewState>

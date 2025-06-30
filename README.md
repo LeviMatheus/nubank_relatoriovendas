@@ -52,7 +52,7 @@ Automatizar todo o processo de:
 ## 📬 Entrega Final
 
 Cada vendedor recebe:
-- Os relatórios **protegidos por senha**, em **PDF** são **protegidos por senha**
+- Os relatórios em **PDF** são **protegidos por senha**
 - Um e-mail automático com os relatórios (em formato de planilha e PDF) sobre suas vendas anexo.
 
 ---
