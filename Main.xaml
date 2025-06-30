@@ -2221,7 +2221,7 @@
                           <Transition.To>
                             <State x:Name="__ReferenceID3" DisplayName="Processa Item" sap:VirtualizedContainerService.HintSize="150,60" sap2010:WorkflowViewState.IdRef="State_4">
                               <State.Entry>
-                                <TryCatch DisplayName="Try Catch Processa Item" sap:VirtualizedContainerService.HintSize="438,310" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                <TryCatch DisplayName="Try Catch Processa Item" sap:VirtualizedContainerService.HintSize="590,1117" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                   <TryCatch.Try>
                                     <Sequence DisplayName="Processar Item" sap:VirtualizedContainerService.HintSize="552,867" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                       <Sequence.Variables>
@@ -3248,7 +3248,7 @@
                                                         </sap:WorkflowViewStateService.ViewState>
                                                       </ui:ForEachRow>
                                                     </Sequence>
-                                                    <Sequence DisplayName="Aplicar desconto e taxa" sap:VirtualizedContainerService.HintSize="468,48" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                                                    <Sequence DisplayName="Aplicar desconto e taxa" sap:VirtualizedContainerService.HintSize="620,1923" sap2010:WorkflowViewState.IdRef="Sequence_78">
                                                       <Sequence.Variables>
                                                         <Variable x:TypeArguments="x:String" Name="Str_IntervaloDesconto" />
                                                         <Variable x:TypeArguments="x:String" Name="Str_IntervaloSubtotal" />
@@ -3338,7 +3338,7 @@
                                                           </InArgument>
                                                         </If.Condition>
                                                         <If.Then>
-                                                          <Sequence DisplayName="Aplicar desconto" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_79">
+                                                          <Sequence DisplayName="Aplicar desconto" sap:VirtualizedContainerService.HintSize="416,344" sap2010:WorkflowViewState.IdRef="Sequence_79">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -3348,7 +3348,7 @@
                                                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,173" sap2010:WorkflowViewState.IdRef="LogMessage_65" Level="Info">
                                                               <ui:LogMessage.Message>
                                                                 <InArgument x:TypeArguments="x:Object">
-                                                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_583" xml:space="preserve">"Aplicar valor desconto" + (double.Parse(
+                                                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_742" xml:space="preserve">"Aplicar valor desconto: R$" + (double.Parse(
     Str_Subtotal.Replace("R$", "").Replace(",", "").Trim(),
     CultureInfo.InvariantCulture
 )*0.10).ToString("F2")</CSharpValue>
@@ -4311,7 +4311,7 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <av:PointCollection x:Key="ConnectorLocation">153,200.5 123,200.5 123,653 145,653</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">153,200.5 49,200.5 49,653 145,653</av:PointCollection>
               <x:Int32 x:Key="SrcConnectionPointIndex">41</x:Int32>
               <x:Int32 x:Key="DestConnectionPointIndex">41</x:Int32>
             </scg:Dictionary>
