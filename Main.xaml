@@ -415,7 +415,7 @@
           <Transition.To>
             <State x:Name="__ReferenceID4" DisplayName="Extração e Validação de dados" sap:VirtualizedContainerService.HintSize="154,60" sap2010:WorkflowViewState.IdRef="State_6">
               <State.Entry>
-                <Sequence DisplayName="Extrair e validar dados" sap:VirtualizedContainerService.HintSize="488,1279" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                <Sequence DisplayName="Extrair e validar dados" sap:VirtualizedContainerService.HintSize="488,1156" sap2010:WorkflowViewState.IdRef="Sequence_28">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="Str_SalesList" />
                   </Sequence.Variables>
@@ -425,7 +425,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <TryCatch DisplayName="Extração DT_Vendedores" sap:VirtualizedContainerService.HintSize="454,84" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                  <TryCatch DisplayName="Extração DT_Vendedores" sap:VirtualizedContainerService.HintSize="454,57" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -596,7 +596,7 @@
                       </Catch>
                     </TryCatch.Catches>
                   </TryCatch>
-                  <TryCatch DisplayName="Extração DT_Vendas" sap:VirtualizedContainerService.HintSize="454,831" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+                  <TryCatch DisplayName="Extração DT_Vendas" sap:VirtualizedContainerService.HintSize="454,777" sap2010:WorkflowViewState.IdRef="TryCatch_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -604,7 +604,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <TryCatch.Try>
-                      <Sequence DisplayName="Extrair DT_Vendas" sap:VirtualizedContainerService.HintSize="416,571" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                      <Sequence DisplayName="Extrair DT_Vendas" sap:VirtualizedContainerService.HintSize="416,517" sap2010:WorkflowViewState.IdRef="Sequence_29">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="teste" />
                           <Variable x:TypeArguments="scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))" Name="DictKeys" />
@@ -699,7 +699,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uisape:ExtractPDFText>
-                        <Assign DisplayName="Coletar tabela de vendas gerada" sap:VirtualizedContainerService.HintSize="382,84" sap2010:WorkflowViewState.IdRef="Assign_32">
+                        <Assign DisplayName="Coletar tabela de vendas gerada" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="Assign_32">
                           <Assign.To>
                             <OutArgument x:TypeArguments="sd:DataTable">
                               <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_70">DT_Vendas</CSharpReference>
@@ -717,7 +717,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </Assign>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,75" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Info">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Info">
                           <ui:LogMessage.Message>
                             <InArgument x:TypeArguments="x:Object">
                               <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_242">"Tabela de vendas gerada"</CSharpValue>
@@ -782,7 +782,7 @@
                       </Catch>
                     </TryCatch.Catches>
                   </TryCatch>
-                  <Sequence DisplayName="Adicionar novas colunas" sap:VirtualizedContainerService.HintSize="454,99" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                  <Sequence DisplayName="Adicionar novas colunas" sap:VirtualizedContainerService.HintSize="454,57" sap2010:WorkflowViewState.IdRef="Sequence_35">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1999,12 +1999,12 @@
                     <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_252">FalhaRegraDeNegocio == null || FalhaSistema == null</CSharpValue>
                   </Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID0" DisplayName="Coleta Itens" sap:VirtualizedContainerService.HintSize="150,60" sap2010:WorkflowViewState.IdRef="State_3">
+                    <State x:Name="__ReferenceID0" DisplayName="Coleta Itens" sap:VirtualizedContainerService.HintSize="750,2491" sap2010:WorkflowViewState.IdRef="State_3">
                       <State.Entry>
-                        <TryCatch DisplayName="Try Catch Coleta Itens" sap:VirtualizedContainerService.HintSize="204,25" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                        <TryCatch DisplayName="Try Catch Coleta Itens" sap:VirtualizedContainerService.HintSize="704,2076" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -2096,7 +2096,7 @@
                                                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info">
                                                   <ui:LogMessage.Message>
                                                     <InArgument x:TypeArguments="x:Object">
-                                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_461">"# Sem itens para processar"</CSharpValue>
+                                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_706">"&gt; Sem itens para processar"</CSharpValue>
                                                     </InArgument>
                                                   </ui:LogMessage.Message>
                                                 </ui:LogMessage>
@@ -2274,7 +2274,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID3" DisplayName="Processa Item" sap:VirtualizedContainerService.HintSize="654,2501" sap2010:WorkflowViewState.IdRef="State_4">
+                            <State x:Name="__ReferenceID3" DisplayName="Processa Item" sap:VirtualizedContainerService.HintSize="150,60" sap2010:WorkflowViewState.IdRef="State_4">
                               <State.Entry>
                                 <TryCatch DisplayName="Try Catch Processa Item" sap:VirtualizedContainerService.HintSize="608,2086" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                   <TryCatch.Try>
