@@ -8,8 +8,9 @@ Este projeto foi desenvolvido como solução para o **Case RPA** proposto pela N
 
 Automatizar todo o processo de:
 
-1. **Leitura e validação de dados de vendas** (extraídos de PDF).
-2. **Verificação de cadastro de vendedores e regras de negócio.**
+1. **Leitura e validação de dados de vendas** (extraídos de PDF SalesList.pdf).
+2. **Verificação de cadastro de vendedores  (Vendor List.xlsx)**.
+3. **Validação de regras de negócio.**
 3. **Geração de relatórios individuais por vendedor**, com:
    - Descontos aplicáveis
    - Taxas regionais
@@ -24,8 +25,8 @@ Automatizar todo o processo de:
 - 📄 `Sales List.pdf` (lista de vendas)
 - 📊 `Vendor List.xlsx` (vendedores e status)
 - 📋 `Sales Report_Template.xlsx` (modelo de relatório)
-- 🌐 API pública de câmbio para conversão de moedas
-- 📮 API de endereço (Correios) para enriquecimento de dados (se necessário)
+- 🌐 API pública de câmbio para conversão de moedas via https://buscacepinter.correios.com.br/app/endereco/index.php?t
+- 📮 API de endereço (Correios e IBGE) via https://viacep.com.br/
 
 ---
 
@@ -52,8 +53,9 @@ Automatizar todo o processo de:
 ## 📬 Entrega Final
 
 Cada vendedor recebe:
-- Os relatórios em **PDF** são **protegidos por senha**
-- Um e-mail automático com os relatórios (em formato de planilha e PDF) sobre suas vendas anexo.
+- Os relatórios em **PDF** são **protegidos por senha** conforme a regra estabelecida.
+- Um e-mail automático com os relatórios (em formato de planilha e PDF) sobre suas vendas anexo para casos válidos.
+- Um e-mail automático com o relatório de erro (em formato de planilha) para casos inválidos.
 
 ---
 
@@ -61,8 +63,9 @@ Cada vendedor recebe:
 
 - **UiPath Studio** (baseado no **REFramework adaptado**)
 - C# para expressões, regex e lógica avançada
-- APIs externas (via HTTP Request)
-- Excel e PDF Activities
+- Uso de Arquivo de origem de código C# obtendo o melhor em relação a desempenho de execução
+- APIs externas (via HTTP Request) com tratamento para tentativas
+- Uso de bibliotecas oficiais UiPath - Excel e PDF Activities
 
 ---
 
@@ -72,7 +75,16 @@ Cada vendedor recebe:
 - Extração de dados inteligente com OCR, Regex e tratamento de exceções.
 - Estratégia escalável para uso com Orchestrator e múltiplos robôs.
 
+## Pontos de Melhoria
+
+- Nas requisições À APIs, valores já obtidos anteriormente poderiam ser armazenados par evitar consultas extras (exemplo: armazenar valor de câmbio para evitar mudanças de valor durante a execução);
+- A leitura dos arquivos PDF poderiam ser escaláveis em paginação, permitindo obter mais informações em casos que houverem mais de uma página;
+- Item de transação utilizado pode ser mais rastreável se utilizado uma base de dados para controle das vendas por vendedores;
+- Documentos usados como Input poderiam ser copiados para um ambiente ou disponibilizados em nuvem, evitando possíveis corrompimentos;
+- Ajustar a convenção de nomenclatura utilizada para a oficial UiPath e C# gerando mais clareza;
+- A API utilizada para obtenção dos CEPs é atualizada mensalmente, caso necessário atualização mais frequente, pode ser necessário migrar para outra API mais atualizada;
+
 ---
 
-**Desenvolvido por:** Levi  
+**Desenvolvido por:** Levi Matheus Guerreiro Sange
 **Case Técnico:** Nubank – RPA Seleção Técnica
