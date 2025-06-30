@@ -10,13 +10,11 @@ Automatizar todo o processo de:
 
 1. **Leitura e validação de dados de vendas** (extraídos de PDF SalesList.pdf).
 2. **Verificação de cadastro de vendedores  (Vendor List.xlsx)**.
-3. **Validação de regras de negócio.**
-3. **Geração de relatórios individuais por vendedor**, com:
+3. **Validação de regras de negócio** e geração de relatórios individuais por vendedor, com:
    - Descontos aplicáveis
    - Taxas regionais
    - Conversão de moedas em tempo real
-4. **Criação de relatórios em PDF protegidos por senha**.
-5. **Envio automático dos relatórios via e-mail.**
+4. **Criação de relatórios em PDF protegidos por senha** e envio automático via e-mail.
 
 ---
 
@@ -25,8 +23,9 @@ Automatizar todo o processo de:
 - 📄 `Sales List.pdf` (lista de vendas)
 - 📊 `Vendor List.xlsx` (vendedores e status)
 - 📋 `Sales Report_Template.xlsx` (modelo de relatório)
-- 🌐 API pública de câmbio para conversão de moedas via https://buscacepinter.correios.com.br/app/endereco/index.php?t
-- 📮 API de endereço (Correios e IBGE) via https://viacep.com.br/
+- 🌐 **API de Câmbio:** Para conversão de moedas em tempo real via 
+http://economia.awesomeapi.com.br/json/last/USD-BRL
+- 📮 **API de Endereço (ViaCEP):** Para consulta de dados de endereço a partir do CEP via https://viacep.com.br/
 
 ---
 
@@ -38,7 +37,7 @@ Automatizar todo o processo de:
   - **São Paulo:** 5%
   - **Rio de Janeiro:** 2%
   - **Minas Gerais:** 1%
-- Todas as invoices são consideradas com prazo de até **D+30**.
+- **Premissa de Pagamento:** Todas as faturas (invoices) são consideradas com prazo de pagamento de até **30 dias (D+30)**.
 
 ---
 
@@ -63,8 +62,8 @@ Cada vendedor recebe:
 
 - **UiPath Studio** (baseado no **REFramework adaptado**)
 - C# para expressões, regex e lógica avançada
-- Uso de Arquivo de origem de código C# obtendo o melhor em relação a desempenho de execução
-- APIs externas (via HTTP Request) com tratamento para tentativas
+- **C#:** Utilizado para expressões complexas, criação de objetos e manipulação avançada de dados (Regex) para melhor performance e manutenibilidade.
+- **APIs Externas:** Consumo de serviços REST via `HTTP Request` com lógica de `retry` para maior resiliência.
 - Uso de bibliotecas oficiais UiPath - Excel e PDF Activities
 
 ---
@@ -77,14 +76,13 @@ Cada vendedor recebe:
 
 ## Pontos de Melhoria
 
-- Nas requisições À APIs, valores já obtidos anteriormente poderiam ser armazenados par evitar consultas extras (exemplo: armazenar valor de câmbio para evitar mudanças de valor durante a execução);
-- A leitura dos arquivos PDF poderiam ser escaláveis em paginação, permitindo obter mais informações em casos que houverem mais de uma página;
-- Item de transação utilizado pode ser mais rastreável se utilizado uma base de dados para controle das vendas por vendedores;
-- Documentos usados como Input poderiam ser copiados para um ambiente ou disponibilizados em nuvem, evitando possíveis corrompimentos;
-- Ajustar a convenção de nomenclatura utilizada para a oficial UiPath e C# gerando mais clareza;
-- A API utilizada para obtenção dos CEPs é atualizada mensalmente, caso necessário atualização mais frequente, pode ser necessário migrar para outra API mais atualizada;
+- **Cache de API:** Implementar um mecanismo de cache para requisições à API de câmbio. Isso evitaria múltiplas chamadas com os mesmos parâmetros e garantiria uma taxa de conversão consistente durante toda a execução do robô.
+- **Escalabilidade na Leitura de PDF:** Aprimorar a extração de dados de PDFs para suportar documentos com múltiplas páginas, garantindo que o robô processe relatórios de qualquer tamanho.
+- **Rastreabilidade de Transações:** Migrar o controle de itens de transação para uma base de dados (ex: SQL Server, Oracle). Isso aumentaria a rastreabilidade, a capacidade de recuperação e facilitaria a geração de relatórios de auditoria.
+- **Gestão de Artefatos de Entrada:** Implementar uma rotina para copiar os arquivos de entrada para uma pasta de trabalho versionada (`Input/{timestamp}`), prevenindo a corrupção dos arquivos originais e garantindo a reprodutibilidade do processo.
+- **Padronização de Código:** Refatorar nomes de variáveis e atividades para seguir estritamente as convenções de nomenclatura da UiPath (ex: `in_Argumento`, `out_Argumento`, `strVariavel`) e do C#, aumentando a legibilidade e a manutenibilidade do código.
+- **Estratégia de APIs:** Avaliar e documentar a política de atualização das APIs consumidas. Para casos que exijam dados com maior frequência de atualização, planejar a substituição ou o uso de APIs pagas com SLAs definidos.
 
 ---
-
 **Desenvolvido por:** Levi Matheus Guerreiro Sange
 **Case Técnico:** Nubank – RPA Seleção Técnica
