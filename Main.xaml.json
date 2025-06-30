@@ -112,6 +112,18 @@
       "IsPrincipal": true,
       "ArgumentType": 0,
       "DataSourceItems": null
+    },
+    {
+      "Name": "Dec_ValorTetoDesconto",
+      "DisplayName": "Dec_ValorTetoDesconto",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "2000000",
+      "Widget": null,
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
     }
   ]
 }
