@@ -124,6 +124,18 @@
       "IsPrincipal": true,
       "ArgumentType": 0,
       "DataSourceItems": null
+    },
+    {
+      "Name": "In_Str_EmailsDestino",
+      "DisplayName": "In_Str_EmailsDestino",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "levi.matheusmartins@gmail.com",
+      "Widget": null,
+      "IsRequired": true,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
     }
   ]
 }
